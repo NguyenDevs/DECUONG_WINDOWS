@@ -1,0 +1,10 @@
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Cau_1.9\bin\Debug\Cau_1.9.exe.config
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Cau_1.9\bin\Debug\Cau_1.9.exe
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Cau_1.9\bin\Debug\Cau_1.9.pdb
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Cau_1.9\obj\Debug\Cau_1.9.csproj.AssemblyReference.cache
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Cau_1.9\obj\Debug\Cau_1._9.Form1.resources
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Cau_1.9\obj\Debug\Cau_1._9.Properties.Resources.resources
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Cau_1.9\obj\Debug\Cau_1.9.csproj.GenerateResource.cache
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Cau_1.9\obj\Debug\Cau_1.9.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Cau_1.9\obj\Debug\Cau_1.9.exe
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Cau_1.9\obj\Debug\Cau_1.9.pdb
