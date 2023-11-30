@@ -15,7 +15,8 @@ namespace Cau_1._9{
         }
         private void btnTinh_Click(object sender, EventArgs e){
             if (!KiemTraDuLieu()){
-                MessageBox.Show("Vui lòng nhập đúng định dạng số nguyên cho a, b, c.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập đúng định dạng số nguyên cho a, b, c.", "Lỗi", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
             // Lấy giá trị của a, b, c từ TextBox
@@ -34,10 +35,9 @@ namespace Cau_1._9{
             else{
                 double x1 = (-b + Math.Sqrt(delta)) / (2.0 * a);
                 double x2 = (-b - Math.Sqrt(delta)) / (2.0 * a);
-                txtKetqua.Text = $"Phương trình có 2 nghiệm phân biệt: x1 = {Math.Round(x1, 2)}, x2 = {Math.Round(x2, 2)}";
+            txtKetqua.Text = $"Phương trình có 2 nghiệm phân biệt: x1 = {Math.Round(x1, 2)}, x2 = {Math.Round(x2, 2)}";
         }
     }
-
     private void btnThulai_Click(object sender, EventArgs e){
         txtHesoA.Clear();
         txtHesoB.Clear();

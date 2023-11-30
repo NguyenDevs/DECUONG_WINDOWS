@@ -45,11 +45,9 @@ namespace Cau_2._1
 
             return result;
         }
-
         private void btnTinh_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(txtNhapN.Text, out int n))
-            {
+            if (int.TryParse(txtNhapN.Text, out int n)){
                 double result = Math.Round(CalculateExpression(n), 4);
                 txtKetQua.Text = $"Kết quả: {result}";
             }
@@ -65,7 +63,6 @@ namespace Cau_2._1
             txtKetQua.Clear();
             txtNhapN.Focus();
         }
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có chắc muốn thoát khỏi chương trình?",
@@ -76,5 +73,5 @@ namespace Cau_2._1
             }
         }
     }
-    }
+ }
 

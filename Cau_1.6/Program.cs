@@ -7,7 +7,6 @@ class Program{
             Console.WriteLine("Vui long nhap vao mot so nguyen duong: ");
         }
         int[] arr = new int[n];
-        // Nhập mảng từ bàn phím
         for (int i = 0; i < n; i++){
             Console.Write($"Nhap phan tu thu {i + 1}: ");
             while (!int.TryParse(Console.ReadLine(), out arr[i])){
@@ -25,7 +24,6 @@ class Program{
                 min = arr[i];
             }
         }
-        // Hiển thị kết quả
         Console.WriteLine($"Phan tu lon nhat trong mang la: {max}");
         Console.WriteLine($"Phan tu nho nhat trong mang la: {min}");
     }
