@@ -61,7 +61,13 @@ namespace Câu_3._1{
             }
         }
         private void btn_luu_Click(object sender, EventArgs e){
-            try{
+            if (string.IsNullOrEmpty(txt_masv.Text))
+            {
+                MessageBox.Show("Please enter Masv to update.");
+                return;
+            }
+            try
+            {
                 using (myConnection = new SqlConnection(conStr)){
                    myConnection.Open();
                     string sqlStr3 = "INSERT INTO tblsinhvien(Masv, HovaTen, NgaySinh, GioiTinh, Makhoa) " +
