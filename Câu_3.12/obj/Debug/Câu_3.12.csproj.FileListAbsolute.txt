@@ -1,0 +1,10 @@
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Câu_3.12\bin\Debug\Câu_3.12.exe.config
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Câu_3.12\bin\Debug\Câu_3.12.exe
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Câu_3.12\bin\Debug\Câu_3.12.pdb
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Câu_3.12\obj\Debug\Câu_3.12.csproj.AssemblyReference.cache
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Câu_3.12\obj\Debug\Câu_3._12.Form1.resources
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Câu_3.12\obj\Debug\Câu_3._12.Properties.Resources.resources
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Câu_3.12\obj\Debug\Câu_3.12.csproj.GenerateResource.cache
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Câu_3.12\obj\Debug\Câu_3.12.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Câu_3.12\obj\Debug\Câu_3.12.exe
+C:\Users\ASUS\Documents\GitHub\DECUONG_WINDOWS\Câu_3.12\obj\Debug\Câu_3.12.pdb
