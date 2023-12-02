@@ -24,9 +24,7 @@ namespace Câu_3._5
         private string conStr = @"Data Source=RAPHAEL-PC\RAPHAEL;
         Initial Catalog=QLSV;Persist Security Info=True;User ID=sa;Password=Blacksmith@0407";
         private void Display() {
-            string sqlStr = "SELECT * FROM tblkhoa";
-            using (myDataAdapter = new SqlDataAdapter(sqlStr, conStr))
-            {
+            using (myDataAdapter = new SqlDataAdapter("SELECT * FROM tblkhoa", conStr)) {
                 myDataSet = new DataSet();
                 myDataAdapter.Fill(myDataSet, "daotao");
                 myTable = myDataSet.Tables["daotao"];
@@ -35,12 +33,9 @@ namespace Câu_3._5
             }
         }
         private void Form1_Load(object sender, EventArgs e) {
-            using (myConnection = new SqlConnection(conStr)) {
-                myConnection.Open();
-                Display();
-                int rowCount = myTable.Rows.Count; 
-                txt_tong.Text = rowCount.ToString();
-            }
+            Display();
+            int rowCount = myTable.Rows.Count;
+            txt_tong.Text = rowCount.ToString();
         }
         private void btn_thoat_Click(object sender, EventArgs e) {
             Application.Exit();
@@ -60,33 +55,32 @@ namespace Câu_3._5
             txt_makhoa.Focus();
         }
         private void btn_xoa_Click(object sender, EventArgs e) {
-            try {
+            try  {
                 int pos = dataGridView1.CurrentRow.Index;
                 string makhoaToDelete = myTable.Rows[pos]["Makhoa"].ToString();
                 DeleteRecordFromDatabase(makhoaToDelete);
                 myTable.Rows[pos].Delete();
-                myTable.AcceptChanges();
+                Display();
                 int rowCount = myTable.Rows.Count;
                 txt_tong.Text = rowCount.ToString();
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void DeleteRecordFromDatabase(string masv) {
+        private void DeleteRecordFromDatabase(string makhoa) {
             try {
-                using (myConnection = new SqlConnection(conStr)){
+                using (myConnection = new SqlConnection(conStr)) {
                     myConnection.Open();
                     string sqlStr = "DELETE FROM tblkhoa WHERE Makhoa = @Makhoa";
-                    using (myCommand = new SqlCommand(sqlStr, myConnection)) {
-                        myCommand.Parameters.AddWithValue("@Makhoa", masv);
+                    using (myCommand = new SqlCommand(sqlStr, myConnection))
+                    {
+                        myCommand.Parameters.AddWithValue("@Makhoa", makhoa);
                         myCommand.ExecuteNonQuery();
                     }
                 }
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 MessageBox.Show("An error occurred while deleting from the database: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

@@ -18,11 +18,11 @@ namespace Câu_3._3{
         }
         private SqlDataAdapter myDataAdapter;
         private DataSet myDataSet;
-        private SqlCommand myCommand;
         private SqlConnection myConnection;
         private DataTable myTable;
-        private string conStr = @"Data Source=RAPHAEL-PC\RAPHAEL;
-        Initial Catalog=QLSV;Persist Security Info=True;User ID=sa;Password=Blacksmith@0407";
+        private string conStr = @"Data Source=RAPHAEL-PC\RAPHAEL;Initial Catalog=QLSV;Persist Security Info=True;User ID=sa;Password=Blacksmith@0407";
+
+        private int currentIndex = 0;
         private void Display() {
             string sqlStr = "SELECT * FROM tblnhanvien";
             using (myDataAdapter = new SqlDataAdapter(sqlStr, conStr)) {
@@ -43,21 +43,23 @@ namespace Câu_3._3{
             int row = e.RowIndex;
             if (row >= myTable.Rows.Count)
                 row = myTable.Rows.Count - 1;
-            else {
-                txt_manv.Text = myTable.Rows[row]["MaNV"].ToString();
-                txt_hoten.Text = myTable.Rows[row]["HovaTen"].ToString();
-                txt_hesoluong.Text = myTable.Rows[row]["HeSoLuong"].ToString();
-                txt_dienthoai.Text = myTable.Rows[row]["DienThoai"].ToString();
+            else
+            {
+                MoveToRow(row);
             }
         }
-        private int currentIndex = 0;
         private void MoveToRow(int index){
-            if (index >= 0 && index < myTable.Rows.Count){
-                currentIndex = index;
-                txt_manv.Text = myTable.Rows[currentIndex]["MaNV"].ToString();
-                txt_hoten.Text = myTable.Rows[currentIndex]["HovaTen"].ToString();
-                txt_hesoluong.Text = myTable.Rows[currentIndex]["HeSoLuong"].ToString();
-                txt_dienthoai.Text = myTable.Rows[currentIndex]["DienThoai"].ToString();
+            try {
+                if (index >= 0 && index < myTable.Rows.Count) {
+                    currentIndex = index;
+                    txt_manv.Text = myTable.Rows[currentIndex]["MaNV"].ToString();
+                    txt_hoten.Text = myTable.Rows[currentIndex]["HovaTen"].ToString();
+                    txt_hesoluong.Text = myTable.Rows[currentIndex]["HSLuong"].ToString();
+                    txt_dienthoai.Text = myTable.Rows[currentIndex]["DienThoai"].ToString();
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show("An error occurred: " + ex.Message);
             }
         }
         private void btn_first_Click(object sender, EventArgs e) {
@@ -82,10 +84,7 @@ namespace Câu_3._3{
                 DataTable resultTable = new DataTable();
                 myDataAdapter.Fill(resultTable);
                 if (resultTable.Rows.Count > 0) {
-                    txt_manv.Text = resultTable.Rows[0]["MaNV"].ToString();
-                    txt_hoten.Text = resultTable.Rows[0]["HovaTen"].ToString();
-                    txt_hesoluong.Text = resultTable.Rows[0]["HeSoLuong"].ToString();
-                    txt_dienthoai.Text = resultTable.Rows[0]["DienThoai"].ToString();
+                    MoveToRow(resultTable.Rows[0].Table.Rows.IndexOf(resultTable.Rows[0]));
                 }
                 else {
                     MessageBox.Show($"Không tìm thấy nhân viên có tên là Lam");
